@@ -26,3 +26,7 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 
 実行後、Running on public URL: URL名
 が表示されるので、URLをクリックすることで、プロジェクトを実行できる。
+
+###操作
+動画をアップロードし、Resize ratioを0.5以下の値に設定します（google colabのGPU上限対策）
+その後、  Get video infoを押し、add maskを押した後、trackしたい対象をクリックし対象人物が変色する事を確認します。その後、trackingを押すと追跡処理が実行され、ビデオが生成されます。
