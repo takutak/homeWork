@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Video Object Segmentation</h1>
-    
+
     <input type="file" id="video-input" accept="video/*">
     <button id="upload-video">Upload Video</button>
     <br>
@@ -29,7 +29,7 @@ $("#upload-video").click(function() {
     formData.append("video", videoInput.files[0]);
 
     $.ajax({
-        url: "/upload_video",
+        url: "/upload_video.mp4",
         type: "POST",
         data: formData,
         processData: false,
@@ -47,4 +47,3 @@ $("#upload-video").click(function() {
     </script>
 </body>
 </html>
-
