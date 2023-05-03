@@ -7,7 +7,7 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 #### 環境構築
 新たにColab上でノートを作成し、ランタイムのタイプをGPUに変更する。その後本ディレクトリをアップロードする。
 ```
-!git clone https://github.com/taktak/homeWork.git
+!git clone https://github.com/takutak/homeWork.git
 ```
 その後、このアップロードしたディレクトリに移動
 ```
