@@ -30,3 +30,11 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 ###操作
 動画をアップロードし、Resize ratioを0.5以下の値に設定します（google colabのGPU上限対策）
 その後、  Get video infoを押し、add maskを押した後、trackしたい対象をクリックし対象人物が変色する事を確認します。その後、trackingを押すと追跡処理が実行され、ビデオが生成されます。
+
+###VLogの実行
+ここからは、ダウンロードしたmp4ファイルに対してVLogアプリケーションを適用することを考えます。
+まず、google colabratoryにおけるpytorchのバージョンについて確認します。
+
+###Pytorchのバージョン確認と変更について（ver1.9に設定している方は読み飛ばしていただいて結構です。)
+多くの人は、Google ColabのPytorchのバージョンは最新の2.0以降のものになっているかと思います。しかしVLogは1.9系統でなければエラーを吐き出すため、以下の手順でpytorchのver.1系統を再度インストールする必要があります。（Condaを使った仮想環境をcolab上に構築します。）
+google colab上でのanacondaのインストールについては、https://colab.research.google.com/drive/1c_RGCgQeLHVXlF44LyOFjfUW32CmG6BP　が詳しいです。
