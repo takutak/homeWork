@@ -31,29 +31,29 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 動画をアップロードし、Resize ratioを0.5以下の値に設定します（google colabのGPU上限対策）
 その後、  Get video infoを押し、add maskを押した後、trackしたい対象をクリックし対象人物が変色する事を確認します。その後、trackingを押すと追跡処理が実行され、ビデオが生成されます。
 
-#### VLogの実行
-ここからは、ダウンロードしたmp4ファイルに対してVLogアプリケーションを適用することを考えます。
-まず、google colabratoryにおけるpytorchのバージョンについて確認します。まずパッケージをインストールします。
+#### VLogの環境構築
+VLogはCPUで実行できるため、これ以降はローカル環境で実行する。（Ubuntu18.04.5 on Windows環境で実行した）
 ```
-!git clone https://github.com/showlab/VLog.git
+git clone https://github.com/showlab/VLog.git
 ```
+でVLogディレクトリをクローンしたのち、
 ```
-%cd VLog
-%mkdir checkpoints
-%cd checkpoints
-!wget -c https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth
-%cd ..
+cd VLog
+mkdir checkpoints
+wget -c https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth
+cd ..
 ```
-#### Pytorchのバージョン確認と変更について（ver1.9に設定している方は読み飛ばしていただいて結構です。)
-多くの人は、Google ColabのPytorchのバージョンは最新の2.0以降のものになっているかと思います。しかしVLogは1.9系統でなければエラーを吐き出すため、以下の手順でpytorchのver.1系統を再度インストールする必要があります。（Condaを使った仮想環境をcolab上に構築します。）
+その後、
 ```
-!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!chmod +x Miniconda3-latest-Linux-x86_64.sh
-!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+conda create -n -y vlog python=3.8
+conda activate vlog
 ```
-を実行し、colab上でminicondaをインストールする。その後、
+としたのち、pytorchのver1系統をインストールします。（公式サイトを参照しながらインストールしてください。）
 ```
-!conda create -n vlog python=3.8
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 cpuonly -c pytorch
 ```
+その後、
 ```
-%cd VLog
+pip install -r requirements.txt
+```
+を実行します。
