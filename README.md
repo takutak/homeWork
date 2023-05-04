@@ -47,3 +47,12 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 import condacolab
 condacolab.install()
 ```
+```
+!conda create -n vlog python==3.8
+!conda init
+!source activate vlog
+```
+この状態で、VLogディレクトリ上で以下のコマンドを実行する。
+```
+!pip install -r requirements.txt
+```
