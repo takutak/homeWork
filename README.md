@@ -32,6 +32,17 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 その後、  Get video infoを押し、add maskを押した後、trackしたい対象をクリックし対象人物が変色する事を確認します。その後、trackingを押すと追跡処理が実行され、ビデオが生成されます。
 
 #### VLogの環境構築
+```
+!git clone https://github.com/showlab/VLog.git
+%cd VLog
+%mkdir checkpoints
+%cd checkpoints
+!wget "https://datarelease.blob.core.windows.net/grit/models/gr
+%cd ..
+```
+
+
+
 VLogはCPUで実行できるため、これ以降はローカル環境で実行する。（Ubuntu18.04.5 on Windows環境で実行した）
 ```
 git clone https://github.com/showlab/VLog.git
