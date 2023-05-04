@@ -32,6 +32,7 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 その後、  Get video infoを押し、add maskを押した後、trackしたい対象をクリックし対象人物が変色する事を確認します。その後、trackingを押すと追跡処理が実行され、ビデオが生成されます。
 
 #### VLogの環境構築
+以下のコマンドをcolab上で新しいノートブックで実行する。
 ```
 !git clone https://github.com/showlab/VLog.git
 %cd VLog
@@ -40,31 +41,9 @@ Track-AnythingではNVIDIA製のGPU利用を前提としているが、私のパ
 !wget "https://datarelease.blob.core.windows.net/grit/models/gr
 %cd ..
 ```
-
-
-
-VLogはCPUで実行できるため、これ以降はローカル環境で実行する。（Ubuntu18.04.5 on Windows環境で実行した）
+その後、以下のコマンドによりconda環境を構築する。
 ```
-git clone https://github.com/showlab/VLog.git
+!pip install -q condacolab
+import condacolab
+condacolab.install()
 ```
-でVLogディレクトリをクローンしたのち、
-```
-cd VLog
-mkdir checkpoints
-wget -c https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth
-cd ..
-```
-その後、
-```
-conda create -n -y vlog python=3.8
-conda activate vlog
-```
-としたのち、pytorchのver1系統をインストールします。（公式サイトを参照しながらインストールしてください。）
-```
-conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 cpuonly -c pytorch
-```
-その後、
-```
-pip install -r requirements.txt
-```
-を実行します。
