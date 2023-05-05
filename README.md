@@ -56,3 +56,10 @@ condacolab.install()
 ```
 !pip install -r requirements.txt
 ```
+
+
+---
+#### 現在の問題点
+colab環境でうまくcondaの仮想環境を設定することができない。
+自前のPCだとCUDA環境のPyTorchをインストールできないため、どうにもならない。
+（Windowsのanacondaプロンプトの場合にはdetectron2で（mac およびlinux環境でないため。）, Ubuntu on Windowsの場合には、torch==1.9.0+cu111のインストールで詰んでしまう...）
